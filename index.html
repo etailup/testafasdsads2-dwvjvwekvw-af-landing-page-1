@@ -1,0 +1,389 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Letting Go - Official Book Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50; /* A calming green */
+            --secondary-color: #2196F3; /* A soft blue */
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --background-light: #ffffff;
+            --background-dark: #f0f8ff; /* A very light blue tint */
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 0.2em;
+            color: var(--text-dark); /* Main title a bit darker */
+        }
+
+        h2 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1em;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-light) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        header .subtitle {
+            font-size: 1.4em;
+            color: #555;
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header .author {
+            font-size: 1.1em;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 60px 20px;
+            background-color: var(--background-light);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .book-cover {
+            flex-shrink: 0; /* Prevents image from shrinking */
+            width: 250px;
+            height: 380px; /* Standard paperback aspect ratio ~1.52 */
+            background-image: url('https://via.placeholder.com/250x380?text=Book+Cover'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: var(--secondary-color); /* A different color for the hero headline */
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: #43A047; /* Darker green on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Features/Benefits Section */
+        .features {
+            background-color: var(--background-dark);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            margin-bottom: 40px;
+            color: var(--text-dark);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: left;
+        }
+
+        .feature-item h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--background-light);
+        }
+
+        .testimonials h2 {
+            margin-bottom: 40px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-item {
+            background-color: var(--background-dark);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--shadow);
+            font-style: italic;
+            position: relative;
+            text-align: left;
+        }
+
+        .testimonial-item::before {
+            content: "“";
+            font-size: 4em;
+            color: rgba(0,0,0,0.1);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            line-height: 1;
+        }
+
+        .testimonial-item p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item .author-name {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .cta-section .btn:hover {
+            background-color: #1976D2; /* Darker blue */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #bbb;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .hero .book-cover {
+                margin-right: 40px; /* Space between image and text */
+            }
+
+            .hero h2 {
+                text-align: left;
+            }
+            .features h2, .testimonials h2, .cta-section h2 {
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 80px 20px;
+            }
+            .features, .testimonials, .cta-section {
+                padding: 80px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>The Power of Letting Go</h1>
+            <p class="subtitle">7 Effective Techniques on How to Stop Overthinking the Past, Heal Emotional Wounds, and (Finally) Enjoy the Freedom You Deserve, without Ruminating.</p>
+            <p class="author">By [Your Name/Author Name Here]</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="book-cover"></div>
+            <div class="hero-content">
+                <h2>Break Free from the Past. Embrace Your Future.</h2>
+                <p>Are you trapped in a cycle of overthinking, haunted by past regrets and emotional wounds? It's time to reclaim your peace and live the life you deserve. This book is your compassionate guide to breaking free from rumination and stepping into a future filled with freedom and joy.</p>
+                <a href="#purchase" class="btn">Order Your Copy Today</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>What You'll Discover Inside</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3>Silence the Inner Critic</h3>
+                        <p>Learn powerful strategies to quiet the persistent voice of overthinking and stop the cycle of negative self-talk that holds you back.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Heal Old Wounds</h3>
+                        <p>Access proven techniques to confront, process, and ultimately heal lingering emotional scars from past experiences, allowing you to move forward.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Master 7 Key Techniques</h3>
+                        <p>Uncover practical, step-by-step methods to detach from past events, manage anxiety, and cultivate a mindset of peace and presence.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Live with Freedom</h3>
+                        <p>Embrace the freedom that comes from releasing the burden of the past, allowing you to enjoy the present moment and build a brighter future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Readers Are Saying</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-item">
+                        <p>"This book changed my life. I finally understand how to stop dwelling on the past and truly move forward. Highly recommended!"</p>
+                        <p class="author-name">- Sarah M.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <p>"A compassionate and practical guide. The techniques are easy to understand and incredibly effective. I feel lighter and more hopeful."</p>
+                        <p class="author-name">- David P.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <p>"If you're struggling with rumination, this is the book for you. It offers real solutions and a clear path to emotional freedom."</p>
+                        <p class="author-name">- Emily R.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" id="purchase">
+            <div class="container">
+                <h2>Ready to Let Go and Live Free?</h2>
+                <p>Stop letting the past dictate your present and future. Take the first step towards emotional freedom and lasting peace today.</p>
+                <a href="#" class="btn">Get Your Copy on Amazon Now!</a>
+                <!-- You can add links to other retailers here as well -->
+                <!-- <p style="margin-top: 20px; font-size: 1em;">Also available at Barnes & Noble and your local bookstore.</p> -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 [Your Name/Author Name]. All rights reserved.</p>
+            <p>Disclaimer: This book offers guidance and techniques for personal growth. It is not a substitute for professional psychological or medical advice.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
